@@ -1,1 +1,2 @@
 Desarrollo web de un sitio responsive compuesto por tres páginas. Crear una página web con una estructura bien organizada y un diseño atractivo y estético. Las páginas tienen que ser visualmente ordenadas y fáciles de leer, diseñadas para captar la atención y facilitar la navegación de manera intuitiva y dinámica, incluyendo efectos de interacción.
+TODO CREDITO A HERNAN MERINO
