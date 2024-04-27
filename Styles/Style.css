@@ -1,0 +1,142 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Nunito', sans-serif; /* Cambio de fuente */
+}
+
+header{
+    background-color: #FFA07A; /* Un naranja suave */
+    color: white;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+h1{
+    text-align: center;
+    animation: titulo 1s ease-in 1;
+}
+
+nav{
+    background-color: #FFA07A;
+    color: white;
+    animation: menu 1000ms ease-in 1;
+}
+
+table td, table th{
+    border-collapse: separate;
+    border-spacing: 10px;
+    border: black 1px solid;
+    margin-left: 50px;
+    column-gap: 30px;
+}
+
+.tabla{
+    column-count: 2;
+    column-width: 300px; 
+     column-gap: 20px;
+}
+
+#ingredientes{
+    border-collapse: separate;
+    border: black 1px solid;
+}
+
+
+@keyframes titulo {
+   from {opacity: 0;}
+
+   to {opacity: 1}
+   }
+
+@keyframes menu {
+    from{transform: translateX(-100%);}
+
+    to{transform: translateX(0%);}
+    
+}   
+
+.nav{
+    background-color: #FFA07A;
+    color: white;
+    text-decoration: none;
+    padding: 10px; 
+    border-radius: 10px; 
+    margin-bottom: 10px;
+    left: 0;
+}
+
+@media screen and (max-width: 576px) {
+
+
+    nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: none;
+    }
+    
+}
+
+
+.nav:hover{
+    background-color: #FF4500;
+    color: white;
+}
+.nav:hover, .btn.nav:hover, footer a:hover, footer .btn:hover {
+    background-color: #FF4500; /* Un rojo-naranja más intenso para el hover */
+    color: white;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+
+footer{
+    position: relative;
+    color : black;
+    background-color: #FFA07A;
+    left: 0px;
+    bottom: 0px;
+    width:100%;
+    height: 50px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        position: relative;
+    }
+}
+
+footer, a{
+    text-align: center;
+    text-decoration: none;
+    background-color: #FFA07A; /* Un naranja suave */
+    color: white;
+    margin-top: 10px;
+}
+
+footer, a:hover{
+    background-color: #FF4500;
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+
+label, input{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+input[type=text], input[type=tel],
+input[type=email], input[type=address], 
+input[type=radio], input[type=checkbox],
+input[type=submit], input[type=reset], select{
+    
+    padding: 10px; 
+    margin: 10px;
+    left:5%;  
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 400px;
+}
