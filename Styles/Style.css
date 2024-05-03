@@ -1,11 +1,11 @@
 *{
     margin: 0%;
     padding: 0%;
-    font-family: 'Nunito', sans-serif; /* Cambio de fuente */
+    font-family: 'Nunito', sans-serif;
 }
 
 header{
-    background-color: #FFA07A; /* Un naranja suave */
+    background-color: #FFA07A;
     color: white;
     margin-top: auto;
     margin-bottom: auto;
@@ -71,7 +71,8 @@ table td, table th{
     nav{
         display: flex;
         flex-direction: column;
-        justify-content: none;
+        justify-content: center;
+        align-content: center;
     }
     
 }
@@ -82,8 +83,7 @@ table td, table th{
     color: white;
 }
 .nav:hover, .btn.nav:hover, footer a:hover, footer .btn:hover {
-    background-color: #FF4500; /* Un rojo-naranja más intenso para el hover */
-    color: white;
+    background-color: #FF4500;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
@@ -105,17 +105,28 @@ footer{
     }
 }
 
+@media screen and (max-width: 500px) {
+    .iframes {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+    }
+
+}
+
 footer, a{
     text-align: center;
     text-decoration: none;
-    background-color: #FFA07A; /* Un naranja suave */
+    background-color: #FFA07A; 
     color: white;
     margin-top: 10px;
 }
 
 footer, a:hover{
     background-color: #FF4500;
-    color: white;
+    color:#FFA07A;
     transition: color 0.3s ease-in-out;
 }
 
@@ -127,8 +138,8 @@ label, input{
 input[type=text], input[type=tel],
 input[type=email], input[type=address], 
 input[type=radio], input[type=checkbox],
-input[type=submit], input[type=reset], select{
-    
+input[type=submit], input[type=reset],input[textarea], 
+select, textarea{
     padding: 10px; 
     margin: 10px;
     left:5%;  
