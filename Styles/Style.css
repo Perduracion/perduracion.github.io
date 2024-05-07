@@ -1,66 +1,145 @@
-*{
-    margin: 0%;
-    padding: 0%;
-    font-family: 'Nunito', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+
+:root {
+    /*========== Colors ==========*/
+    --primary-color: #faa077;
+    --secondary-color: #fff;
+    --background-color: #1E2326;
+    --third-color: #252A2E;
+    --fourth-color: #ff4450;
 }
 
-header{
-    background-color: #FFA07A;
+* {
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Righteous', sans-serif;
+}
+
+
+
+header {
+    background-color: var(--third-color);
     color: white;
     margin-top: auto;
     margin-bottom: auto;
 }
 
-h1{
-    text-align: center;
-    animation: titulo 1s ease-in 1;
+body {
+    background-color: #faa077;
 }
 
-nav{
+h1 {
+    text-align: center;
+    animation: titulo 1s ease-in 1;
+    text-decoration: none;
+    font-size: 40px;
+}
+
+
+.header-container {
+    background: var(--background-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.header-container header {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.header-container header .logo a {
+    font-family: 'Righteous';
+    font-size: 36px;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.header-container header ul {
+    display: flex;
+    list-style: none;
+}
+
+.header-container header nav ul li a {
+    text-align: none;
+    color: var(--secondary-color);
+    margin: 0 15px;
+    padding: 3px;
+    transition: 0.4s;
+    text-decoration: none;
+}
+
+.header-container header nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.nav-responsive {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+.subnav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0;
+}
+
+.flag {
+    width: 20px;
+    height: 20px;
+}
+
+/*nav {
     background-color: #FFA07A;
     color: white;
     animation: menu 1000ms ease-in 1;
 }
 
-table td, table th{
-    border-collapse: separate;
-    border-spacing: 10px;
-    border: black 1px solid;
-    margin-left: 50px;
-    column-gap: 30px;
-}
+*/
 
-.tabla{
-    column-count: 2;
-    column-width: 300px; 
-     column-gap: 20px;
-}
-
-#ingredientes{
-    border-collapse: separate;
-    border: black 1px solid;
-}
 
 
 @keyframes titulo {
-   from {opacity: 0;}
+    from {
+        opacity: 0;
+    }
 
-   to {opacity: 1}
-   }
+    to {
+        opacity: 1
+    }
+}
 
 @keyframes menu {
-    from{transform: translateX(-100%);}
+    from {
+        transform: translateX(-100%);
+    }
 
-    to{transform: translateX(0%);}
-    
-}   
+    to {
+        transform: translateX(0%);
+    }
 
-.nav{
+}
+
+/*
+.nav {
     background-color: #FFA07A;
     color: white;
     text-decoration: none;
-    padding: 10px; 
-    border-radius: 10px; 
+    padding: 10px;
+    border-radius: 10px;
     margin-bottom: 10px;
     left: 0;
 }
@@ -68,35 +147,258 @@ table td, table th{
 @media screen and (max-width: 576px) {
 
 
-    nav{
+    nav {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-content: center;
     }
-    
+
 }
 
 
-.nav:hover{
+.nav:hover {
     background-color: #FF4500;
     color: white;
 }
-.nav:hover, .btn.nav:hover, footer a:hover, footer .btn:hover {
+
+.nav:hover,
+.btn.nav:hover,
+footer a:hover,
+footer .btn:hover {
     background-color: #FF4500;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
+*/
+@media screen and (max-width: 980px) {
+    nav {
+        display: none;
+    }
 
-footer{
+    .nav-responsive {
+        display: block;
+    }
+
+    nav.responsive {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 75px;
+        background-color: var(--third-color);
+        width: 180px;
+    }
+
+    nav.responsive ul {
+        display: block;
+    }
+
+    nav.responsive ul li {
+        border-bottom: 1px solid var(--secondary-color);
+        padding: 10px 0;
+    }
+}
+
+
+/*********************************************************************************************************************/
+/******** main article                                                                                        *******/
+/*******************************************************************************************************************/
+
+
+table td,
+table th {
+    border-collapse: var(--primary-color);
+    border-spacing: 10px;
+    border: #FF4500 1px solid;
+    margin-left: 50px;
+    column-gap: 10px;
+    color: white;
+    background-color: #1E2326;
+}
+
+.tabla {
+    column-count: 1;
+    column-width: 300px;
+    column-gap: 20px;
+    border: none;
+    padding: 20px;
+    color: white;
+}
+
+#ingredientes {
+    border-collapse: separate;
+    border: #FF4500 1px solid;
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
     position: relative;
-    color : black;
-    background-color: #FFA07A;
+    top: 75px;
+    padding-bottom: 150px;
+
+}
+
+/************************************************************************/
+/*********                      MAIN RECETAS                        ****/
+/**********************************************************************/
+
+.receta {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 50px 20px;
+}
+
+.receta .receta-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.receta h2 {
+    font-size: 36px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+
+.receta .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.receta .row .column {
+    width: 49%;
+    padding: 0 20px;
+}
+
+.receta .row .column h3 {
+    font-size: 28px;
+    font-family: 'Righteous';
+    margin-bottom: 25px;
+}
+
+
+.receta .row .item {
+    padding: 25px;
+    margin-bottom: 30px;
+    background-color: var(--third-color);
+    position: relative;
+    /* border-radius: 5%;*/
+}
+
+.receta .row .item:hover {
+    background-color: #703539;
+}
+
+.receta .row .item h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.receta .row .item .subtitle {
+    color: var(--primary-color);
+    font-size: 22px;
+    font-weight: bold;
+    display: block;
+}
+
+.receta .row .item .date {
+    display: block;
+    color: #ff4450;
+    margin-bottom: 10px;
+}
+
+.receta .row .item p {
+    line-height: 24px;
+}
+
+.receta .row .left {
+    border-right: 2px solid var(--fourth-color);
+    margin-right: 20px;
+}
+
+.receta .row .right {
+    border-left: 2px solid var(--fourth-color);
+    margin-left: 20px;
+}
+
+.row1 {
+    background-image: url(/img/panq.jpg);
+    margin: 10px;
+
+}
+
+.receta .row1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.receta .row1 .column {
+    width: 49%;
+    padding: 0 20px;
+}
+
+.receta .row1 .column {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.receta .row1 .item {
+    width: 49%;
+    padding: 0 20px;
+}
+
+.receta .row1 .item {
+    width: 49%;
+    padding: 0 20px;
+}
+
+.receta .row1 .item .subtitle {
+    color: white;
+    font-size: 30px;
+    letter-spacing: 5px;
+    padding: 30px;
+}
+
+/*****************************/
+/*        fooooter        ***/
+/***************************/
+
+
+footer {
+    position: fixed;
+    color: black;
+    /* padding-top: 50px;*/
+    text-align: center;
+    background-color: var(--fourth-color);
     left: 0px;
     bottom: 0px;
-    width:100%;
-    height: 50px;
+    width: 100%;
+    height: 150px;
     overflow: hidden;
+}
+
+footer .social-media a {
+    color: var(--secondary-color);
+    display: inline-block;
+    text-decoration: none;
+    border: 2px solid var(--secondary-color);
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 40px 5px;
+    font-size: 20px;
+    transition: .3s;
+}
+
+footer .social-media a:hover {
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: blue;
+    margin-top: 10px;
+    opacity: 70%;
 }
 
 @media screen and (max-width: 768px) {
@@ -107,7 +409,7 @@ footer{
 
 @media screen and (max-width: 500px) {
     .iframes {
-        display:flex;
+        display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
@@ -116,33 +418,26 @@ footer{
 
 }
 
-footer, a{
-    text-align: center;
-    text-decoration: none;
-    background-color: #FFA07A; 
-    color: white;
-    margin-top: 10px;
+label,
+input {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
 }
 
-footer, a:hover{
-    background-color: #FF4500;
-    color:#FFA07A;
-    transition: color 0.3s ease-in-out;
-}
-
-label, input{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-}
-
-input[type=text], input[type=tel],
-input[type=email], input[type=address], 
-input[type=radio], input[type=checkbox],
-input[type=submit], input[type=reset],input[textarea], 
-select, textarea{
-    padding: 10px; 
+input[type=text],
+input[type=tel],
+input[type=email],
+input[type=address],
+input[type=radio],
+input[type=checkbox],
+input[type=submit],
+input[type=reset],
+input[textarea],
+select,
+textarea {
+    padding: 10px;
     margin: 10px;
-    left:5%;  
+    left: 5%;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
