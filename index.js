@@ -54,7 +54,7 @@ e.preventDefault();
 const formData = new FormData(form);
 const object = Object.fromEntries(formData);
 const json = JSON.stringify(object);
-result.innerHTML = "Please wait..."
+result.innerHTML = "Por favor espere..."
 
     fetch('https://api.web3forms.com/submit', {
             method: 'POST',
@@ -75,7 +75,7 @@ result.innerHTML = "Please wait..."
         })
         .catch(error => {
             console.log(error);
-            result.innerHTML = "Something went wrong!";
+            result.innerHTML = "Algo salio mal!";
         })
         .then(function() {
             form.reset();
