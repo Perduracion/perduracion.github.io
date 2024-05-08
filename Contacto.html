@@ -26,9 +26,10 @@
 
     <hr>
     <main>
-        <form action="https://api.web3forms.com/submit" method="post" target="_blank" >Completá los datos que aparecen abajo <br><br>
+        <form action="https://api.web3forms.com/submit" method="post" id="form" >Completá los datos que aparecen abajo <br><br>
             <input type="hidden" name="access_key" value="87d1e17f-ce99-4984-bea7-c39ece2eb541">
             <input type="hidden" name="subject" value="Nuevo comentario/consulta del sitio">
+            <input type="checkbox" name="botcheck" id="" style="display: none;">
             <Label for="nombre">Nombre(obligatorio):</Label>
             <input type="text" id="nombre" name="nombre" placeholder="Escribí tu nombre"><br>
             <Label for="apellido">Apellido(obligatorio):</Label>
@@ -81,12 +82,6 @@
             <textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="Escribí tu comentario aquí"></textarea><br>
             <input type="submit" value="Enviar formulario">
             <input type="reset" value="Limpiar datos del formulario">
-            <script>
-                window.onload = function() {
-                    // Restablece el formulario cuando la página se carga
-                    document.getElementById("form").reset();
-                };
-            </script>
 
 
             
