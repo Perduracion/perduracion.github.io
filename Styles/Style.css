@@ -36,7 +36,6 @@ h1 {
     font-size: 40px;
 }
 
-
 .header-container {
     background: var(--background-color);
     position: fixed;
@@ -107,10 +106,7 @@ h1 {
     color: white;
     animation: menu 1000ms ease-in 1;
 }
-
 */
-
-
 
 @keyframes titulo {
     from {
@@ -171,6 +167,7 @@ footer .btn:hover {
 }
 
 */
+
 @media screen and (max-width: 980px) {
     nav {
         display: none;
@@ -199,11 +196,9 @@ footer .btn:hover {
     }
 }
 
-
 /*********************************************************************************************************************/
 /******** main article                                                                                        *******/
 /*******************************************************************************************************************/
-
 
 table td,
 table th {
@@ -236,7 +231,6 @@ main {
     position: relative;
     top: 75px;
     padding-bottom: 150px;
-
 }
 
 /************************************************************************/
@@ -364,6 +358,15 @@ main {
 /*        fooooter        ***/
 /***************************/
 
+.consejo{
+    text-align: center;
+    font-size: 12px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #FFA07A;
+    color: black;
+}
 
 footer {
     position: fixed;
@@ -374,7 +377,7 @@ footer {
     left: 0px;
     bottom: 0px;
     width: 100%;
-    height: 150px;
+    height: 50px;
     overflow: hidden;
 }
 
