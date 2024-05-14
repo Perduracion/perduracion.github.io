@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <script setup lang="ts">
 import { ref } from "vue";
-const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
+const WEB3FORMS_ACCESS_KEY = "87d1e17f-ce99-4984-bea7-c39ece2eb541";
 const name = ref("")
 const email = ref("")
 const message = ref("")
@@ -30,7 +30,7 @@ const response = await fetch("https://api.web3forms.com/submit", {
     Accept: "application/json",
     },
     body: JSON.stringify({
-    access_key: WEB3FORMS_ACCESS_KEY,
+    access_key: 87d1e17f-ce99-4984-bea7-c39ece2eb541,
     name: name.value,
     email: email.value,
     message: message.value,
