@@ -3,22 +3,22 @@
 
 :root {
     /*========== Colors ==========*/
-    --primary-color: #faa077;
-    --secondary-color: #fff;
+    --primary-color: #FAA007;
+    --secondary-color: #FFF;
     --background-color: #1E2326;
     --third-color: #252A2E;
-    --fourth-color: #ff4450;
+    --fourth-color: #FF4450;
 }
 
 * {
     margin: 0%;
     padding: 0%;
-    font-family: 'Righteous', sans-serif;
+    font-family: 'Georgia', sans-serif;
 }
 
 
 
-header {
+header{
     background-color: var(--third-color);
     color: white;
     margin-top: auto;
@@ -26,10 +26,10 @@ header {
 }
 
 body {
-    background-color: #faa077;
+    background-color: #FFA07A;
 }
 
-h1 {
+h1{
     text-align: center;
     animation: titulo 1s ease-in 1;
     text-decoration: none;
@@ -101,7 +101,7 @@ h1 {
     height: 20px;
 }
 
-/*nav {
+/*nav{
     background-color: #FFA07A;
     color: white;
     animation: menu 1000ms ease-in 1;
@@ -119,23 +119,23 @@ h1 {
 }
 
 @keyframes menu {
-    from {
+    from{
         transform: translateX(-100%);
     }
 
-    to {
+    to{
         transform: translateX(0%);
     }
 
-}
+}   
 
 /*
-.nav {
+.nav{
     background-color: #FFA07A;
     color: white;
     text-decoration: none;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 10px; 
+    border-radius: 10px; 
     margin-bottom: 10px;
     left: 0;
 }
@@ -143,17 +143,17 @@ h1 {
 @media screen and (max-width: 576px) {
 
 
-    nav {
+    nav{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-content: center;
     }
-
+    
 }
 
 
-.nav:hover {
+.nav:hover{
     background-color: #FF4500;
     color: white;
 }
@@ -200,13 +200,51 @@ footer .btn:hover {
 /******** main article                                                                                        *******/
 /*******************************************************************************************************************/
 
+/* Apply this CSS to the table element */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Apply this CSS to the table's th and td elements */
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* Apply this CSS to the table's th elements */
+th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+/* Apply this CSS to the table's tbody element */
+tbody {
+    display: block;
+    overflow-x: auto;
+}
+
+/* Apply this CSS to the table's tbody element */
+tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* Apply this CSS to the table's thead element */
+thead {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
 table td,
-table th {
+table th{
     border-collapse: var(--primary-color);
     border-spacing: 10px;
     border: #FF4500 1px solid;
     margin-left: 50px;
-    column-gap: 10px;
+    column-gap: 30px;
     color: white;
     background-color: #1E2326;
 }
@@ -368,15 +406,15 @@ main {
     color: black;
 }
 
-footer {
+footer{
     position: fixed;
-    color: black;
+    color : black;
     /* padding-top: 50px;*/
     text-align: center;
     background-color: var(--fourth-color);
     left: 0px;
     bottom: 0px;
-    width: 100%;
+    width:100%;
     height: 50px;
     overflow: hidden;
 }
@@ -387,26 +425,27 @@ footer .social-media a {
     text-decoration: none;
     border: 2px solid var(--secondary-color);
     border-radius: 100%;
-    width: 42px;
-    height: 42px;
-    line-height: 42px;
-    margin: 40px 5px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    margin: 12px 2px;
     font-size: 20px;
     transition: .3s;
 }
 
-footer .social-media a:hover {
+footer, .social-media a:hover {
     text-align: center;
     text-decoration: none;
-    background-color: var(--primary-color);
-    color: blue;
+    background-color: #FF4500;
+    color:blue;
     margin-top: 10px;
     opacity: 70%;
+    transition: color 0.3s ease-in-out;
 }
 
 @media screen and (max-width: 768px) {
     footer {
-        position: relative;
+        position: fixed;
     }
 }
 
@@ -422,7 +461,7 @@ footer .social-media a:hover {
 }
 
 label,
-input {
+input{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
 }
@@ -430,17 +469,17 @@ input {
 input[type=text],
 input[type=tel],
 input[type=email],
-input[type=address],
+input[type=address], 
 input[type=radio],
 input[type=checkbox],
 input[type=submit],
 input[type=reset],
-input[textarea],
+input[textarea], 
 select,
-textarea {
-    padding: 10px;
+textarea{
+    padding: 10px; 
     margin: 10px;
-    left: 5%;
+    left:5%;  
     border-radius: 10px;
     display: flex;
     flex-direction: row;
