@@ -44,3 +44,24 @@ function closeMenu()
     showMenu = false;
 }
 
+/** js para menu responsive al usar la web en celulares, pero en otros sitios */
+
+function toggleMenu()
+{
+    if (showMenu)
+    {
+        document.getElementById("nav").className = "";
+        showMenu = false;
+    } else
+    {
+        document.getElementById("nav").className = "responsive";
+        showMenu = true;
+    }
+}
+
+
+function closeMenu()
+{
+    document.getElementById("nav").className = "";
+    showMenu = false;
+}
