@@ -101,12 +101,9 @@ h1{
     height: 20px;
 }
 
-/*nav{
-    background-color: #FFA07A;
-    color: white;
-    animation: menu 1000ms ease-in 1;
+nav{
+    animation: menu 250ms ease-in 1;
 }
-*/
 
 @keyframes titulo {
     from {
@@ -114,7 +111,7 @@ h1{
     }
 
     to {
-        opacity: 1
+        opacity: 1;
     }
 }
 
@@ -127,7 +124,17 @@ h1{
         transform: translateX(0%);
     }
 
-}   
+}
+
+@keyframes nav {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
 
 /*
 .nav{
@@ -169,6 +176,7 @@ footer .btn:hover {
 */
 
 @media screen and (max-width: 980px) {
+        /* Mostrar el botón del menú y ocultar la lista de navegación en pantallas pequeñas */
     nav {
         display: none;
     }
@@ -178,7 +186,8 @@ footer .btn:hover {
     }
 
     nav.responsive {
-        display: block;
+        display: block; /* Mostrar el botón del menú en pantallas pequeñas */
+        cursor: pointer; /* Cambiar el cursor a un puntero para indicar que es interactivo */
         position: absolute;
         right: 0;
         top: 75px;
