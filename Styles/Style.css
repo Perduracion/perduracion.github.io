@@ -13,7 +13,7 @@
 * {
     margin: 0%;
     padding: 0%;
-    font-family: 'Righteous', sans-serif;
+    font-family: 'Georgia', sans-serif;
 }
 
 
@@ -464,6 +464,7 @@ label,
 input{
     font-family: Righteous, sans-serif;
     font-size: 12px;
+    text-align: left;
 }
 
 input[type=text],
@@ -479,12 +480,19 @@ select,
 textarea{
     padding: 10px; 
     margin: 10px;
-    left:5%;  
     border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: left;
     box-sizing: border-box;
     width: 100%;
     max-width: 400px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type=radio],
+input[type=checkbox] {
+    margin: 5px;
 }
