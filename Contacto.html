@@ -28,6 +28,10 @@
     <main>
         <form action="https://api.web3forms.com/submit" method="POST">Completá los datos que aparecen abajo <br><br>
             <input type="hidden" name="access_key" value="87d1e17f-ce99-4984-bea7-c39ece2eb541">
+            <input type="hidden" name="subject" value="Nueva Comentario/consulta del sitio web">
+            <input type="hidden" name="from_name" value="MANJARES COTIDIANOS">
+            <input type="hidden" name="ccemail" value="perduracion@gmail.com">
+            <input type="hidden" name="replyto" value="moisespark50@gmail.com">
             <Label for="nombre">Nombre(obligatorio):</Label>
             <input type="text" id="nombre" name="nombre" placeholder="Escribí tu nombre"><br>
             <Label for="apellido">Apellido(obligatorio):</Label>
@@ -79,9 +83,11 @@
             <label for="comentario">Comentario o consulta (obligatorio):</label>
             <textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="Escribí tu comentario aquí"></textarea><br>
             <input type="hidden" name="redirect" value="https://web3forms.com/success">
+            <input type="checkbox" name="botcheck" id="" style="display: none;">
             <div class="h-captcha" data-captcha="true"></div>
             <button type="submit">Enviar formulario</button>
             <input type="reset" value="Limpiar datos del formulario">
+            <script src="https://web3forms.com/client/script.js" async defer></script>
 
 
             
