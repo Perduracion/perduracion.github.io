@@ -106,7 +106,7 @@ nav{
 @keyframes sloganZoom {
     from{transform: scale(0);}
 
-    to{transform: scale(2);}
+    to{transform: scale(1);}
 }
 
 #slogan{
