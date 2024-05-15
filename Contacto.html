@@ -29,7 +29,7 @@
     <main>
         <form action="https://api.web3forms.com/submit" method="POST" id="form">Completá los datos que aparecen abajo <br><br>
             <input type="hidden" name="access_key" value="87d1e17f-ce99-4984-bea7-c39ece2eb541">
-            <input type="hidden" name="subject" value="Nueva Comentario/consulta del sitio web">
+            <input type="hidden" name="subject" value="Nuevo Comentario del Sitio Web">
             <input type="hidden" name="from_name" value="MANJARES COTIDIANOS">
             <Label for="nombre">Nombre(obligatorio):</Label>
             <input type="text" id="nombre" name="nombre" placeholder="Escribí tu nombre"><br>
@@ -81,12 +81,8 @@
             <label for="puesto2">Gastronómico</label><br><br>
             <label for="comentario">Comentario o consulta (obligatorio):</label>
             <textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="Escribí tu comentario aquí"></textarea><br>
-            <input type="checkbox" name="botcheck" id="form" style="display: none;">
-            <div class="h-captcha" data-captcha="true"></div>
             <button type="submit" id="submitBtn">Enviar formulario</button>
             <button type="reset" id="resetBtn">Limpiar datos del formulario</button>
-            <script src="https://web3forms.com/client/script.js" async defer></script>
-
 
             
         </form>
