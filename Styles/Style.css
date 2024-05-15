@@ -275,6 +275,7 @@ main {
 }
 
 .receta .row .column h3 {
+    display: flex;
     font-size: 28px;
     font-family: 'Righteous';
     margin-bottom: 25px;
@@ -337,6 +338,7 @@ main {
 }
 
 .receta .row1 .column {
+    display: flex;
     width: 49%;
     padding: 0 20px;
 }
