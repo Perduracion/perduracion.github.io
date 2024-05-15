@@ -13,7 +13,7 @@
 * {
     margin: 0%;
     padding: 0%;
-    font-family: 'Georgia', sans-serif;
+    font-family: 'Righteous', sans-serif;
 }
 
 
@@ -135,45 +135,6 @@ nav{
         opacity: 100%;
     }
 }
-
-/*
-.nav{
-    background-color: #FFA07A;
-    color: white;
-    text-decoration: none;
-    padding: 10px; 
-    border-radius: 10px; 
-    margin-bottom: 10px;
-    left: 0;
-}
-
-@media screen and (max-width: 576px) {
-
-
-    nav{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-content: center;
-    }
-    
-}
-
-
-.nav:hover{
-    background-color: #FF4500;
-    color: white;
-}
-
-.nav:hover,
-.btn.nav:hover,
-footer a:hover,
-footer .btn:hover {
-    background-color: #FF4500;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-*/
 
 @media screen and (max-width: 980px) {
         /* Mostrar el botón del menú y ocultar la lista de navegación en pantallas pequeñas */
