@@ -182,8 +182,8 @@ table th{
     color: white;
     background-color: #1E2326;
 }
-@media screen and (max-width: 768px) {
 
+@media screen and (max-width: 768px) {
 /* Apply this CSS to the table element */
     table {
         width: 100%;
