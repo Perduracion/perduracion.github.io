@@ -141,7 +141,7 @@ nav{
         /* Mostrar el botón del menú y ocultar la lista de navegación en pantallas pequeñas */
     nav {
         display: none;
-        max-width: 1000px
+        max-width: 1100px
     }
 
     .nav-responsive {
@@ -171,44 +171,6 @@ nav{
 /*********************************************************************************************************************/
 /******** main article                                                                                        *******/
 /*******************************************************************************************************************/
-
-/* Apply this CSS to the table element */
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-/* Apply this CSS to the table's th and td elements */
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-/* Apply this CSS to the table's th elements */
-th {
-    background-color: #f2f2f2;
-    text-align: left;
-}
-
-/* Apply this CSS to the table's tbody element */
-tbody {
-    display: block;
-    overflow-x: auto;
-}
-
-/* Apply this CSS to the table's tbody element */
-tbody tr {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-}
-
-/* Apply this CSS to the table's thead element */
-thead {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-}
 
 table td,
 table th{
@@ -454,6 +416,7 @@ footer, .social-media a:hover {
 
     .receta .row .right {
         margin-left: 20px;
+    }
 }
 
 @media screen and (max-width: 768px) {
