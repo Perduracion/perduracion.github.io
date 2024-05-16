@@ -440,6 +440,21 @@ footer, .social-media a:hover {
     footer {
         position: fixed;
     }
+    .receta .row {
+        display: block;
+    }
+
+    .receta .row .column {
+        width: fit-content;
+    }
+
+    .receta .row .column {
+        width: 90%;
+    }
+
+    .receta .row .right {
+        margin-left: 20px;
+
 }
 
 @media screen and (max-width: 768px) {
