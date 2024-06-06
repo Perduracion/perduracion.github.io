@@ -589,3 +589,13 @@ input[type="submit"]:hover {
 .register-link:hover {
     text-decoration: underline;
 }
+
+.flash {
+    background-color: var(--secondary-color);
+    color: #FF4500;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5%;
+    text-decoration: none;
+    list-style: none;
+}
