@@ -24,6 +24,8 @@ CREATE TABLE PRODUCT (
 /*============================================================================*/
 /*============= CREO UNA FUNCION PARA QUE ME DIGA SI EXISTE EL USUARIO =======*/
 /*============================================================================*/
+/*la funcion se reemplazó con una validación al momento de la registración */
+
 DELIMITER $$
 
 CREATE FUNCTION fn_exists_mail (MAIL VARCHAR(255))

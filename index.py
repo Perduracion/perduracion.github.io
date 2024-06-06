@@ -88,7 +88,7 @@ def add_user():
         name_exists = cur.execute('SELECT * FROM USER WHERE USER_NAME = %s', [name]) 
         mail_exists = cur.execute('SELECT * FROM USER WHERE USER_MAIL = %s', [email])
         if name_exists:  # Corrección del chequeo de resultado de la consulta
-            flash('El usuario ingresado ya existe en el sistema, por favor ingrese otro!')  # el usuario debe ser unico
+            flash('El usuario ya existe, intente con otro!')  # el usuario debe ser unico
         elif mail_exists:
             flash('El mail ya se encuentra registrado!')  # el mail debe ser unico
         else: 
