@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login y Registro</title>
+
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="header-container">
+        <header>
+            <div class="logo">
+                <a href="index">MANJARES COTIDIANOS</a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="/" onclick="closeMenu()">Inicio</a></li>
+                    <li><a href="contacto" onclick="closeMenu()">Contacto</a></li>
+                    <li><a href="acerca" onclick="closeMenu()">Acerca de</a></li>
+                    <li><a href="sucursales" onclick="closeMenu()">Sucursales</a></li>
+                    <li><a href="login" onclick="closeMenu()">Iniciar Sesion</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive" onclick=toggleMenu()>
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+    <div class="container">
+        <h2>Login</h2>
+        <form action="#" method="POST">
+            <input type="text" name="username" placeholder="Usuario" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <input type="submit" value="Iniciar Sesión">
+        </form>
+        <p>¿No tienes una cuenta? <a class="register-link" href="register">Regístrate</a></p>
+    </div>
+
+</body>
+<script src="/javascript/index.js"></script>
+
+</html>
