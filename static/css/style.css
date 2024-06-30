@@ -344,7 +344,7 @@ main {
 }
 
 .row1 {
-    background-image: url(/img/panq.jpg);
+    background-image: url(../img/panq.jpg);
     margin: 10px;
 
 }
