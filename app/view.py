@@ -1,4 +1,4 @@
-from flask import jsonify, request
+from flask import jsonify, request, render_template
 # from app.model import Movie
 from app.model import Product
 
@@ -10,27 +10,16 @@ def get_all_products():
     products = Product.get_all()
     return jsonify([product.serialize() for product in products])
 
-'''
-def create_product():
-    data = request.json
-    n_product = Product(product_name=data['product_name'], 
-                        product_desc=data['product_desc'], 
-                        product_image_path=data['product_image_path'], 
-                        product_price=data['product_price'],
-                        product_cat_id=data['product_cat_id'],)
-    n_product.save()
-    return jsonify({'message': 'Product added successfully'}), 201
-'''
+# cambio la funcion quito el data json porque yo necesito recibir un request para guardar los datos en la db
 
 def create_product():
-    # Obtener datos del formulario
+    # datos del formulario
     product_name = request.form.get('product_name')
     product_desc = request.form.get('product_desc')
     product_image_path = request.form.get('product_image_path')
     product_price = float(request.form.get('product_price'))
-    product_cat_id = int(request.form.get('category'))  # Asegúrate de que 'category' sea el nombre correcto del select
+    product_cat_id = int(request.form.get('category'))  
     
-    # Crear una instancia del producto
     n_product = Product(product_name=product_name,
                         product_desc=product_desc,
                         product_image_path=product_image_path,
@@ -40,8 +29,9 @@ def create_product():
     # Guardar el producto en la base de datos
     n_product.save()
     
-    # Retornar una respuesta JSON indicando éxito
+    # Retornar una respuesta JSON indicando éxito // comento el json para retornar la vista de productos
     return jsonify({'message': 'Product added successfully'}), 201
+
 
 
 

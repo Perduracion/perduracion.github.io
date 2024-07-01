@@ -33,6 +33,36 @@ def show_products():
     return render_template('cart.html', products=products)
 
 
+# no me funcionban los modelos para editar asique agregue estas lineas...
+# si ingresas a api/prodcutos/2/edit editas el id 2
+
+@app.route('/api/products/<int:id>/edit', methods=['GET'])
+def edit_product(id):
+    product = Product.get_by_id(id)
+    if not product:
+        return "Producto no encontrado", 404
+    return render_template('edit.html', product=product)
+
+@app.route('/api/products/<int:id>', methods=['POST'])
+def update_product(id):
+    product = Product.get_by_id(id)
+    if not product:
+        return "Producto no encontrado", 404
+
+    # Actualizar los datos del producto con los recibidos del formulario
+    product.product_name = request.form.get('product_name')
+    product.product_desc = request.form.get('product_desc')
+    product.product_image_path = request.form.get('product_image_path')
+    product.product_price = float(request.form.get('product_price'))
+    product.product_cat_id = int(request.form.get('category'))
+
+    # Guardar los cambios en la base de datos
+    product.save()
+
+    return "Producto actualizado exitosamente", 200
+
+# aca termina el codigo para editar que hay que revisar!!!
+
 app.route('/nuevo')(nuevo)
 
 
