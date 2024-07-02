@@ -14,10 +14,11 @@
         crossorigin="anonymous"></script>
     <script src="../static/javascript/index.js"></script>
     <link rel="shortcut icon" href="img/icons8-sombrero-de-chef-16.png" type="image/x-icon">
-    <title>Acerca | Manjares cotidianos</title>
+    <title>Agregar | Productos</title>
 </head>
 
 <body>
+
     <div class="header-container">
         <header>
             <div class="logo">
@@ -27,8 +28,8 @@
                 <ul>
                     <li><a href="/" onclick="closeMenu()">Inicio</a></li>
                     <li><a href="cart" onclick="closeMenu()">Productos</a></li>
-                    <li><a href="acerca" onclick="closeMenu()">Acerca de</a></li>
                     <li><a href="sucursales" onclick="closeMenu()">Sucursales</a></li>
+                    <li><a href="acerca" onclick="closeMenu()">Acerca de</a></li>
                     <li><a href="login" onclick="closeMenu()">Iniciar Sesion</a></li>
                 </ul>
             </nav>
@@ -37,35 +38,45 @@
             </div>
         </header>
     </div>
-
     <main>
-        <div class="container-cart">
-            <h1>Productos</h1>
-            <a class="register-link" href="nuevo">Agregar un Nuevo porducto al listado -- Aministrador</a></p>
+        <h1>Agregar Nuevo Producto</h1>
+        <form id="new-product-form" action="/api/products/" method="POST">
+            <label for="product_name">Nombre del Producto:</label>
+            <input type="text" id="product_name" name="product_name" required>
 
-            <body>
-                <div class="container">
-                    <h1 style="color:white"> Detalle</h1>
-                    <div id="product-list">
-                        <!-- Product data will be dynamically added here -->
-                    </div>
-                </div>
+            <label for="product_desc">Descripción del Producto:</label>
+            <textarea id="product_desc" name="product_desc" rows="4" required></textarea>
 
+            <label for="product_image_path">URL de la Imagen:</label>
+            <input type="text" id="product_image_path" name="product_image_path">
 
-        </div>
+            <label for="product_price">Precio:</label>
+            <input type="number" id="product_price" name="product_price" step="0.01" required>
+
+            <div class="form">
+                <select type="InputSelect" name="category" id="category" required>
+                    <option disabled="">Ingresa un tipo de categoría</option>
+                    <option value="1">Bebidas</option>
+                    <option value="2">Alimentos</option>
+                </select>
+            </div>
+            <input type="submit" value="Agregar Producto">
+        </form>
 
     </main>
-    <Footer>
-        <P>
-            <a href="https://www.twitter.com" target="_blank"> <i class="fa fa-brands fa-twitter"></i></a>
-            <a href="https://www.facebook.com" target="_blank"> <i class="fa fa-brands fa-facebook"></i></a>
-            <a href="https://www.instagram.com" target="_blank"> <i class="fa fa-brands fa-instagram"></i></a><br>
+</body>
+
+<Footer>
+    <P>
+        <a href="https://www.twitter.com" target="_blank"> <i class="fa fa-brands fa-twitter"></i></a>
+        <a href="https://www.facebook.com" target="_blank"> <i class="fa fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com" target="_blank"> <i class="fa fa-brands fa-instagram"></i></a><br>
 
 
-            El material presentado en este sitio está protegido total o parcialmente por sus autores. Derechos
-            Reservados.
-        </P>
-    </Footer>
+        El material presentado en este sitio está protegido total o parcialmente por sus autores. Derechos
+        Reservados.
+    </P>
+</Footer>
 </body>
 <script src="../static/javascript/products.js"></script>
 

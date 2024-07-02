@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #252A2E;
+    padding: 20px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.product-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.product-item h2 {
+    margin-bottom: 5px;
+}
+
+.product-item p {
+    margin: 5px 0;
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+}
+
+.product-item .product-image {
+    width: 100px;
+    height: 100px;
+    margin-left: auto;
+}
+
+.product-item .product-details {
+    flex: 1;
+    padding-left: 10px;
+}
+
+/* formulario para agregar productos */
+
+form {
+    max-width: 600px;
+    background-color: #e9bc70;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input,
+textarea {
+    width: calc(100% - 12px);
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
