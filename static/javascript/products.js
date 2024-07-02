@@ -32,11 +32,23 @@ function editProduct(productId)
 {
     // aca va la lógica para editar el producto
     console.log(`Editar producto con ID: ${productId}`);
+    // Construir la URL con el ID del producto
+    const url = `/api/products/edit/${productId}`;
+
+    // Redirigir a la nueva URL
+    window.location.href = url;
+
 }
+
 
 // Función para eliminar un producto
 function deleteProduct(productId)
 {
     // aca va la lógica para eliminar el producto
     console.log(`Eliminar producto con ID: ${productId}`);
+
+    const url = `/api/products/delete/${productId}`;
+
+    // Redirigir a la nueva URL
+    window.location.href = url;
 }

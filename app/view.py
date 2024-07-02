@@ -48,21 +48,9 @@ def get_product(product_id):
 #     return jsonify([movie.serialize() for movie in movies])
 
 
-def update_movie(movie_id):
-    movie = Movie.get_by_id(movie_id)
-    if not movie:
-        return jsonify({'message': 'Movie not found'}), 404
-    data = request.json
-    movie.title = data['title']
-    movie.director = data['director']
-    movie.release_date = data['release_date']
-    movie.banner = data['banner']
-    movie.save()
-    return jsonify({'message': 'Movie updated successfully'})
-
-def delete_movie(movie_id):
-    movie = Movie.get_by_id(movie_id)
-    if not movie:
-        return jsonify({'message': 'Movie not found'}), 404
-    movie.delete()
-    return jsonify({'message': 'Movie deleted successfully'})
+def delete_product(product_id):
+    product = Product.delete_by_id(product_id)
+    if not product:
+        return jsonify({'message': 'Product not found'}), 404
+    product.delete()
+    return jsonify({'message': 'Product deleted successfully'})

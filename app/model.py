@@ -111,6 +111,12 @@ class Product:
         return None
 
 
+    def delete_by_id(product_id):
+         db = get_db()
+         cursor = db.cursor()
+         cursor.execute(f"DELETE FROM PRODUCT WHERE PRODUCT_ID = {product_id}")
+         db.commit()
+         cursor.close()
 
 
 
@@ -166,13 +172,6 @@ class Product:
 #         if row:
 #             return Movie(id_movie=row[0], title=row[1], director=row[2], release_date=row[3], banner=row[4])
 #         return None
-
-#     def delete(self):
-#         db = get_db()
-#         cursor = db.cursor()
-#         cursor.execute("DELETE FROM movies WHERE id_movie = %s", (self.id_movie,))
-#         db.commit()
-#         cursor.close()
 
 #     def serialize(self):
 #         return {

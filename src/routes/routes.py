@@ -32,6 +32,9 @@ def register():
 def nuevo():
     return render_template('nuevo.html')
 
+def edit():
+    return render_template('edit.html')
+
 def add_user():
     
     """ Definición de la función para agregar un usuario nuevo a la base de datos

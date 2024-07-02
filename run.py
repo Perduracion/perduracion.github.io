@@ -26,6 +26,8 @@ app.route('/sucursales')(sucursales)
 app.route('/login')(login)
 app.route('/register')(register)
 app.route('/register', methods=['POST'])(add_user)
+app.route('/edit')(edit)
+
 
 @app.route('/cart')
 def show_products():
@@ -36,7 +38,7 @@ def show_products():
 # no me funcionban los modelos para editar asique agregue estas lineas...
 # si ingresas a api/prodcutos/2/edit editas el id 2
 
-@app.route('/api/products/<int:id>/edit', methods=['GET'])
+@app.route('/api/products/edit/<int:id>', methods=['GET'])
 def edit_product(id):
     product = Product.get_by_id(id)
     if not product:
@@ -59,13 +61,17 @@ def update_product(id):
     # Guardar los cambios en la base de datos
     product.save()
 
-    return "Producto actualizado exitosamente", 200
+#    return "Producto actualizado exitosamente", 200 COMENTO EL JSON PARA REDIRIGIR A UNA VISTA
 
-# aca termina el codigo para editar que hay que revisar!!!
+    # Mostrar mensaje flash de éxito
+    flash('Producto actualizado exitosamente', 'success')
+
+    # Redirigir al usuario a la página de productos
+    return redirect('/cart')
+
+
 
 app.route('/nuevo')(nuevo)
-
-
 
 # # Rutas para el CRUD de la entidad Movie
 app.route('/api', methods=['GET'])(api)
@@ -73,7 +79,18 @@ app.route('/api/productos/<int:product_id>', methods=['GET'])(get_product)
 app.route('/api/products/', methods=['GET'])(get_all_products)
 app.route('/api/products/', methods=['POST'])(create_product)
 #app.route('/api/movies/<int:movie_id>', methods=['PUT'])(update_movie)
-# app.route('/api/movies/<int:movie_id>', methods=['DELETE'])(delete_movie)
+
+@app.route('/api/products/delete/<int:id>', methods=['GET'])
+def delete_product(id):
+    product = Product.delete_by_id(id)
+    #if not product:
+    #    return "Producto no encontrado", 404
+    return redirect('/cart')
+
+app.route('/api/products/<int:product_id>', methods=['DELETE'])(delete_product)
+
+
+
 
 if __name__ == '__main__':
     app.run(port = 3000, debug=True)
