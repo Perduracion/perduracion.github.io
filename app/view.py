@@ -1,5 +1,5 @@
-from flask import jsonify, request, render_template
-# from app.model import Movie
+from flask import jsonify, request, render_template, redirect, flash, url_for
+import time
 from app.model import Product
 
 def api():
@@ -29,8 +29,13 @@ def create_product():
     # Guardar el producto en la base de datos
     n_product.save()
     
+    flash('Producto Agregado correctamente', 'success')
+    time.sleep(5)
     # Retornar una respuesta JSON indicando éxito // comento el json para retornar la vista de productos
-    return jsonify({'message': 'Product added successfully'}), 201
+    #return jsonify({'message': 'Product added successfully'}), 201
+    return redirect('/cart')
+
+
 
 
 

@@ -58,6 +58,7 @@ h1 {
 /* formulario para agregar productos */
 
 form {
+    min-width: 400px;
     max-width: 600px;
     background-color: #e9bc70;
     padding: 20px;

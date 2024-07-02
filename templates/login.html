@@ -19,7 +19,7 @@
             <nav id="nav">
                 <ul>
                     <li><a href="/" onclick="closeMenu()">Inicio</a></li>
-                    <li><a href="cart" onclick="closeMenu()">productos</a></li>
+                    <li><a href="cart" onclick="closeMenu()">Productos</a></li>
                     <li><a href="sucursales" onclick="closeMenu()">Sucursales</a></li>
                     <li><a href="acerca" onclick="closeMenu()">Acerca de</a></li>
                     <li><a href="login" onclick="closeMenu()">Iniciar Sesion</a></li>
@@ -29,11 +29,24 @@
                 <i class="fa-solid fa-bars"></i>
             </div>
         </header>
+
+
     </div>
     <div class="container">
         <h2>Login</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <p class="alert alert-{{ category }}">
+            <a>{{ message }}</a>
+        </p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        {% block body %}{% endblock %}
         <form action="#" method="POST">
-            <input type="text" name="username" placeholder="Usuario" required>
+            <input type="text" name="email" placeholder="correo registrado" required>
             <input type="password" name="password" placeholder="Contraseña" required>
             <input type="submit" value="Iniciar Sesión">
         </form>
@@ -42,5 +55,6 @@
 
 </body>
 <script src="/javascript/index.js"></script>
+<script src="../static/javascript/flash.js"></script>
 
 </html>

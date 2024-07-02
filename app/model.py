@@ -32,7 +32,7 @@ class Product:
     def get_all():
         db = get_db()
         cursor = db.cursor()
-        cursor.execute("SELECT * FROM product")
+        cursor.execute("SELECT * FROM product order by product_cat_id desc")
         rows = cursor.fetchall()
         
         products = [Product(product_id=row[0], 

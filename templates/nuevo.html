@@ -40,6 +40,15 @@
     </div>
     <main>
         <h1>Agregar Nuevo Producto</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
         <form id="new-product-form" action="/api/products/" method="POST">
             <label for="product_name">Nombre del Producto:</label>
             <input type="text" id="product_name" name="product_name" required>
@@ -79,5 +88,6 @@
 </Footer>
 </body>
 <script src="../static/javascript/products.js"></script>
+<script src="../static/javascript/flash.js"></script>
 
 </html>
