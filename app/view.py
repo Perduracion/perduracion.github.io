@@ -48,9 +48,6 @@ def get_product(product_id):
 
 
 
-# def get_all_movies():
-#     movies = Product.get_all()
-#     return jsonify([movie.serialize() for movie in movies])
 
 
 def delete_product(product_id):

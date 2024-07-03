@@ -114,7 +114,7 @@ class Product:
     def delete_by_id(product_id):
          db = get_db()
          cursor = db.cursor()
-         cursor.execute(f"DELETE FROM PRODUCT WHERE PRODUCT_ID = {product_id}")
+         cursor.execute(f"DELETE FROM product WHERE PRODUCT_ID = {product_id}")
          db.commit()
          cursor.close()
 

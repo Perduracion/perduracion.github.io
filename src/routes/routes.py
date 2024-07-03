@@ -17,10 +17,10 @@ def index():
     return render_template('index.html')
 
 def acerca():
-    return render_template('Acerca.html')
+    return render_template('acerca.html')
 
 def contacto():
-    return render_template('Contacto.html')
+    return render_template('contacto.html')
 
 def sucursales():
     return render_template('sucursales.html')
@@ -54,17 +54,17 @@ def add_user():
         db = get_db()
         cur = db.cursor(buffered=True)
         
-        cur.execute('SELECT * FROM USER WHERE USER_NAME = %s', [name])
+        cur.execute('SELECT * FROM user WHERE USER_NAME = %s', [name])
         name_exists = cur.fetchone() is not None  # Check if any row is returned
         
-        cur.execute('SELECT * FROM USER WHERE USER_MAIL = %s', [email])
+        cur.execute('SELECT * FROM user WHERE USER_MAIL = %s', [email])
         mail_exists = cur.fetchone() is not None  # Check if any row is returned
         if name_exists:  # Corrección del chequeo de resultado de la consulta
             flash('El usuario ya existe, intente con otro!','warning')  # el usuario debe ser unico
         elif mail_exists:
             flash('El mail ya esta registrado!','error')  # el mail debe ser unico
         else: 
-            cur.execute('INSERT INTO USER (USER_NAME, USER_MAIL, USER_PASSWORD) VALUES (%s, %s, %s)',
+            cur.execute('INSERT INTO user (USER_NAME, USER_MAIL, USER_PASSWORD) VALUES (%s, %s, %s)',
                         (name, email, hashed_password))
             db.commit()
             flash('Usuario registrado exitosamente', 'success')
@@ -78,7 +78,7 @@ def login():
         db = get_db()
         cur = db.cursor(buffered=True)
         
-        cur.execute('SELECT * FROM USER WHERE USER_MAIL = %s', [email])
+        cur.execute('SELECT * FROM user WHERE USER_MAIL = %s', [email])
         user = cur.fetchone()  # Obtener el usuario por email
         
         if user is None:
