@@ -20,7 +20,7 @@ def acerca():
     return render_template('acerca.html')
 
 def contacto():
-    return render_template('Contacto.html')
+    return render_template('contacto.html')
 
 def sucursales():
     return render_template('sucursales.html')
