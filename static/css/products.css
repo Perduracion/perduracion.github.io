@@ -58,6 +58,7 @@ h1 {
 /* formulario para agregar productos */
 
 form {
+    min-width: 400px;
     max-width: 600px;
     background-color: #e9bc70;
     padding: 20px;
@@ -94,4 +95,50 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #45a049;
+}
+
+#button {
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    /* Bordes redondeados */
+    transition: background-color 0.3s;
+    /* Transición para el efecto hover */
+}
+
+/* Botón de nuevo */
+button.nuevo {
+    background-color: #4f8962;
+}
+
+button.nuevo:hover {
+    background-color: #5cbc74;
+}
+
+/* Botón de nuevo */
+button.editar {
+    background-color: #FFC107;
+}
+
+button.editar:hover {
+    background-color: #FFD150;
+    /* Un tono más oscuro de verde */
+}
+
+/* Botón de eliminar */
+button.eliminar {
+    background-color: #f44336;
+    /* Rojo */
+}
+
+button.eliminar:hover {
+    background-color: #da190b;
+    /* Un tono más oscuro de rojo */
 }

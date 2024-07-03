@@ -1,7 +1,9 @@
 from flask import Flask, request, url_for, redirect, flash
 from flask import render_template
+from werkzeug.security import generate_password_hash, check_password_hash
 from flask_mysqldb import MySQL
 import os.path
+import time
 from app.database import get_db
 from app.view import *
 
@@ -46,6 +48,9 @@ def add_user():
         name = request.form['name']
         email = request.form['email']  # Corrección de variable de usuario a email
         password = request.form['password']
+
+        hashed_password = generate_password_hash(password)
+
         db = get_db()
         cur = db.cursor(buffered=True)
         
@@ -55,18 +60,36 @@ def add_user():
         cur.execute('SELECT * FROM USER WHERE USER_MAIL = %s', [email])
         mail_exists = cur.fetchone() is not None  # Check if any row is returned
         if name_exists:  # Corrección del chequeo de resultado de la consulta
-            flash('El usuario ya existe, intente con otro!')  # el usuario debe ser unico
+            flash('El usuario ya existe, intente con otro!','warning')  # el usuario debe ser unico
         elif mail_exists:
-            flash('El mail ya esta registrado!')  # el mail debe ser unico
+            flash('El mail ya esta registrado!','error')  # el mail debe ser unico
         else: 
             cur.execute('INSERT INTO USER (USER_NAME, USER_MAIL, USER_PASSWORD) VALUES (%s, %s, %s)',
-                        (name, email, password))
+                        (name, email, hashed_password))
             db.commit()
-            flash('Usuario registrado exitosamente')
+            flash('Usuario registrado exitosamente', 'success')
             #return redirect('/register')  
     return render_template('/register.html')  
 
-
+def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        db = get_db()
+        cur = db.cursor(buffered=True)
+        
+        cur.execute('SELECT * FROM USER WHERE USER_MAIL = %s', [email])
+        user = cur.fetchone()  # Obtener el usuario por email
+        
+        if user is None:
+            flash('Correo electrónico no registrado', 'error')
+        elif not check_password_hash(user[3], str(password)):
+            flash('Contraseña incorrecta', 'error')
+        else:
+            flash('¡Inicio de sesión exitoso!', 'success')
+            return redirect('/cart')  # Redirigir
+    
+    return render_template('login.html')
 
 
 #if __name__ == '__main__':

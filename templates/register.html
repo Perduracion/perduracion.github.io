@@ -16,7 +16,7 @@
         <nav id="nav">
             <ul>
                 <li><a href="/" onclick="closeMenu()">Inicio</a></li>
-                <li><a href="cart" onclick="closeMenu()">productos</a></li>
+                <li><a href="cart" onclick="closeMenu()">Productos</a></li>
                 <li><a href="sucursales" onclick="closeMenu()">Sucursales</a></li>
                 <li><a href="acerca" onclick="closeMenu()">Acerca de</a></li>
                 <li><a href="login" onclick="closeMenu()">Iniciar Sesion</a></li>
@@ -30,15 +30,16 @@
 
 <body>
     <div class="register">
-        {% with messages = get_flashed_messages() %}
+        {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
-        <ul class="flash">
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
+        {% for category, message in messages %}
+        <p class="alert alert-{{ category }}">
+            <a>{{ message }}</a>
+        </p>
+        {% endfor %}
         {% endif %}
         {% endwith %}
+
         {% block body %}{% endblock %}
 
         <div class="container">
@@ -55,5 +56,7 @@
     </div>
 </body>
 <script src="../static/javascript/index.js"></script>
+<script src="../static/javascript/flash.js"></script>
+
 
 </html>

@@ -40,7 +40,7 @@
         </header>
     </div>
     <main>
-        <h1>Editar Producto</h1>
+        <h1>Editar: {{product.product_name}}</h1>
 
         {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
@@ -74,7 +74,7 @@
                 <option value="2" {% if product.product_cat_id==2 %} selected {% endif %}>Alimentos</option>
             </select>
             </div>
-            <input type="submit" value="Actualizar Producto">
+            <input type="submit" value="Actualizar">
         </form>
 
     </main>
