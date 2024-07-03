@@ -2,7 +2,6 @@ from flask import Flask, flash, jsonify
 from flask_cors import CORS
 from app.database import init_app
 from app.view import *
-from flask_swagger import swagger
 from src.routes.routes import *
 
 app = Flask(__name__)
@@ -90,6 +89,7 @@ def delete_product(id):
 app.route('/api/products/<int:product_id>', methods=['DELETE'])(delete_product)
 
 app.route('/login', methods=['GET', 'POST'])(login)
+
 
 
 if __name__ == '__main__':

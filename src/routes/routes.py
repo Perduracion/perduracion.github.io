@@ -78,7 +78,7 @@ def login():
         db = get_db()
         cur = db.cursor(buffered=True)
         
-        cur.execute('SELECT * FROM USER WHERE USER_MAIL = %s', [email])
+        cur.execute('SELECT * FROM user WHERE USER_MAIL = %s', [email])
         user = cur.fetchone()  # Obtener el usuario por email
         
         if user is None:
