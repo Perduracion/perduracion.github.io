@@ -16,8 +16,8 @@ fetch('/api/products/')
                     <p>Description: ${product.product_desc}</p>
                     <p>Price: ${product.product_price}</p>
                     <div class="product-actions">
-                        <button onclick="editProduct(${product.product_id})">Editar</button>
-                        <button onclick="deleteProduct(${product.product_id})">Eliminar</button>
+                        <button id="button" class="editar" onclick="editProduct(${product.product_id})">Editar</button>
+                        <button id="button" class="eliminar" onclick="deleteProduct(${product.product_id})">Eliminar</button>
                     </div>
                 </div>
                 <img src="${product.product_image_path}" alt="${product.product_name}" class="product-image">

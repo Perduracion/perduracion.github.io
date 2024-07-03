@@ -582,15 +582,17 @@ input[type="submit"]:hover {
 }
 
 .register-link {
-    color: var(--fourth-color);
+    color: var(--secondary-color);
     text-decoration: none;
+    list-style: none;
 }
 
+/*
 .register-link:hover {
     text-decoration: underline;
 }
 
-/*.flash {
+.flash {
     background-color: var(--secondary-color);
     color: #FF4500;
     padding: 10px;
