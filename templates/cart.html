@@ -45,6 +45,14 @@
                     listado -- Aministrador</a></button></p>
 
             <body>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <p>¿Estás seguro de que deseas eliminar este producto?</p>
+                        <button class="confirm-button" onclick="confirmDelete()">Aceptar</button>
+                        <button class="cancel-button" onclick="closeModal()">Cancelar</button>
+                    </div>
+                </div>
+
                 <div class="container">
                     <h1 style="color:white"> Detalle</h1>
                     <div id="product-list">
