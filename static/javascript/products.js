@@ -17,7 +17,7 @@ fetch('/api/products/')
                     <p>Price: ${product.product_price}</p>
                     <div class="product-actions">
                         <button id="button" class="editar" onclick="editProduct(${product.product_id})">Editar</button>
-                        <button id="button" class="eliminar" onclick="deleteProduct(${product.product_id})">Eliminar</button>
+                        <button id="button" class="eliminar" onclick="openModal(${product.product_id})">Eliminar</button>
                     </div>
                 </div>
                 <img src="${product.product_image_path}" alt="${product.product_name}" class="product-image">
@@ -27,7 +27,7 @@ fetch('/api/products/')
     })
     .catch(error => console.error('Error fetching products:', error));
 
-// falta implementar la edicion y eliminacion 
+
 function editProduct(productId)
 {
     // aca va la lógica para editar el producto
@@ -40,7 +40,7 @@ function editProduct(productId)
 
 }
 
-
+/*
 // Función para eliminar un producto
 function deleteProduct(productId)
 {
@@ -51,4 +51,38 @@ function deleteProduct(productId)
 
     // Redirigir a la nueva URL
     window.location.href = url;
+}
+
+*/
+
+/******************************************************************************** */
+/*                  LOGICA PARA CONFIRMAR UN DELETE                             */
+/***************************************************************************** */
+
+let productIdToDelete;
+
+// Función para abrir la modal y establecer el ID del producto a eliminar
+function openModal(productId)
+{
+    productIdToDelete = productId;
+    document.getElementById('myModal').style.display = 'block';
+}
+
+// Función para cerrar la modal
+function closeModal()
+{
+    document.getElementById('myModal').style.display = 'none';
+}
+
+// Función para confirmar la eliminación
+function confirmDelete()
+{
+    closeModal();
+
+    // Construir la URL para eliminar el producto
+    const url = `/api/products/delete/${productIdToDelete}`;
+    console.log(url)
+    // Redirigir a la nueva URL
+    window.location.href = url;
+
 }
