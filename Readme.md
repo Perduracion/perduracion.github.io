@@ -10,18 +10,25 @@
 
 **Estructura:**
 
-.  
-└── api_json  
-├── app  
-│   ├── database.py  
-│   ├── model.py  
-│   └── view.py  
-├── Notebook  
-│   └── test_request.ipynb  
-├── run.py  
-└── src  
-└── database  
-└── manjar_psql.sql  
+@startuml
+' Define a directory
+dir api_json {
+  ' Add subdirectories
+  dir app {
+    database.py
+    model.py
+    view.py
+  }
+  Notebook
+  run.py
+  dir src {
+    database {
+      manjar_psql.sql
+    }
+  }
+}
+@enduml
+
 
 
 **Detalles:**
