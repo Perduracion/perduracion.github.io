@@ -1,5 +1,5 @@
 import os
-import mysql.connector
+import psycopg2
 from flask import g
 from dotenv import load_dotenv
 
@@ -20,7 +20,7 @@ def get_db():
     print(DATABASE_CONFIG)
     if 'db' not in g:
         print(dir(g))
-        g.db = mysql.connector.connect(**DATABASE_CONFIG)
+        g.db = psycopg2.connect(**DATABASE_CONFIG)
     return g.db
 
 def close_db(e=None):

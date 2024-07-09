@@ -2,33 +2,25 @@ from flask import Flask
 from flask_cors import CORS
 from app.database import init_app
 from app.view import *
-from flask_swagger import swagger
-app = Flask(__name__)
 
-# Configurar la aplicación Flask
-# app.config.from_pyfile('config/development.py')
+def create_app():
+    app = Flask(__name__)
 
-# Inicializar la base de datos con la aplicación Flask
-init_app(app)
-#permitir solicitudes desde cualquier origen
-CORS(app)
-#permitir solicitudes desde un origen específico
-#CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5500"}})
+    # Inicialización de la base de datos
+    init_app(app)
 
+    # Configuración de CORS
+    CORS(app)
 
+    # Rutas
+    app.route('/', methods=['GET'])(index)
+    app.route('/api/products/<int:product_id>', methods=['GET'])(get_product)
+    app.route('/api/products/', methods=['GET'])(get_all_products)
+    app.route('/api/products/', methods=['POST'])(create_product)
+    app.route('/api/products/<int:product_id>', methods=['PUT'])(update_product)
+    app.route('/api/products/<int:product_id>', methods=['DELETE'])(delete_product)
 
-
-# # Rutas para el CRUD de la entidad Movie
-app.route('/', methods=['GET'])(index)
-app.route('/api/productos/<int:product_id>', methods=['GET'])(get_product)
-app.route('/api/products/', methods=['GET'])(get_all_products)
-app.route('/api/products/', methods=['POST'])(create_product)
-#app.route('/api/movies/<int:movie_id>', methods=['PUT'])(update_movie)
-# app.route('/api/movies/<int:movie_id>', methods=['DELETE'])(delete_movie)
-
-
-
-
+    return app
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    create_app().run(debug=True)
