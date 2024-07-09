@@ -10,26 +10,20 @@
 
 **Estructura:**
 
-@startuml
-' Define a directory
-dir api_json {
-  ' Add subdirectories
-  dir app {
-    database.py
-    model.py
-    view.py
-  }
-  Notebook
-  run.py
-  dir src {
-    database {
-      manjar_psql.sql
-    }
-  }
-}
-@enduml
+```.
+└── api_json
+    ├── app
+    │   ├── database.py
+    │   ├── model.py
+    │   └── view.py
+    ├── Notebook
+    │   └── test_request.ipynb
+    ├── run.py
+    └── src
+        └── database
+            └── manjar_psql.sql
 
-
+```
 
 **Detalles:**
 
@@ -43,6 +37,8 @@ dir api_json {
 * Este directorio contiene el código para ejecutar la API que devuelve los renders de los templates, como se planeó originalmente.
 
 **Estructura:**
+
+```.
 ├── app  
 │   ├── database.py  
 │   ├── model.py  
@@ -101,7 +97,8 @@ dir api_json {
 ├── nuevo.html  
 ├── register.html  
 └── sucursales.html  
-  
+
+```
 
 **Detalles:**
 
